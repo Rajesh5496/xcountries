@@ -6,28 +6,37 @@ import { useEffect, useState } from 'react'
 function Renderflags() {
     const baseURL = "https://restcountries.com/v3.1/all"
     const [flagdata, setflagdata] = useState([])
+    const [loading, setloading] = useState(true)
 
     useEffect(() => {
         axios.get(baseURL).then((response) => {
             console.log(response.data)
             setflagdata(response.data)
+            setloading(false)
         }).catch((error) => {
             console.error('Error fetching data:', error);
+            setloading(true)
             // You can set an error state or handle the error in any other way here
         });
     }, [])
     return (
-        <div className={styles.container}>
-        {flagdata.map((ele) => (
+        <div>
+            {loading ? (
+                <p>Loading...</p>
+            ): (
+            <div className={styles.container}>
+                {flagdata.map((ele) => (
 
-            <div className={styles.box}>
-                <img src={ele.flags.png} alt={ele.flags.alt} className={styles.imgclass}/>
-                <div>
-                <p>{ele.name.common}</p>
-                </div>
+                    <div className={styles.box}>
+                        <img src={ele.flags.png} alt={ele.flags.alt} className={styles.imgclass} />
+                        <div>
+                            <p>{ele.name.common}</p>
+                        </div>
+                    </div>
+
+                ))}
             </div>
-
-            ))}
+            )}
         </div>
     )
 }
