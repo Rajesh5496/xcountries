@@ -11,7 +11,10 @@ function Renderflags() {
         axios.get(baseURL).then((response) => {
             console.log(response.data)
             setflagdata(response.data)
-        })
+        }).catch((error) => {
+            console.error('Error fetching data:', error);
+            // You can set an error state or handle the error in any other way here
+        });
     }, [])
     return (
         <div className={styles.container}>
