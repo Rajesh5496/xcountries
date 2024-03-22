@@ -1,0 +1,29 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns */
+    gap: 10px; /* spacing between cards */
+    width: 100%;
+}
+
+.box{
+    padding: 10px;
+    border: 1px solid #aea8a8;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.imgclass{
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width: 768px) {
+    .gridContainer {
+        grid-template-columns: repeat(3, 1fr); /* Change to 3 columns for smaller screens */
+    }
+}
