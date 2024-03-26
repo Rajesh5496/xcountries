@@ -1,6 +1,7 @@
 import styles from './renderflags.module.css'
 import React from "react"
 import axios from "axios"
+import "./renderflags.css"
 import { useEffect, useState } from 'react'
 
 function Renderflags() {
@@ -44,7 +45,7 @@ function Renderflags() {
                     <div className={styles.container}>
                         {flagdata.map((ele) => (
 
-                            <div className={styles.countryCard}>
+                            <div className='countryCard'>
                                 <img key={ele} src={ele.flags.png} alt={ele.flags.alt} className={styles.imgclass} />
                                 <div>
                                     <p>{ele.name.common}</p>
