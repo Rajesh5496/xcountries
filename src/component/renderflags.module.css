@@ -4,8 +4,15 @@
     gap: 10px; /* spacing between cards */
     width: 100%;
 }
+.inputdiv{
+    display: flex;
+    justify-content: center;
+}
+.inputcss{
+    width: 400px;
+}
 
-.box{
+.countryCard{
     padding: 10px;
     border: 1px solid #aea8a8;
     width: 150px;
