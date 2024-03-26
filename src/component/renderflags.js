@@ -27,7 +27,7 @@ function Renderflags() {
         if(event.target.value == ''){
             setflagdata(tempflagdata)
         }else{
-            const filteredArray = flagdata.filter(obj => obj.name.common.includes(event.target.value));
+            const filteredArray = flagdata.filter(obj => obj.name.common.toLowerCase().includes(event.target.value.toLowerCase()));
             console.log(filteredArray)
             setflagdata(filteredArray)
         }
